@@ -208,6 +208,18 @@ function seed(){
        ]});
       save();
     }
+    if(!events.find(e=>e.id==='seed9')){
+      events.push({id:'seed9',seq:events.length+1,prevHash:'',type:'共济值',date:'2026-08-02',
+       title:'境外委托复测 G-9（跨境验证模式首现 · 低置信度辅助事现 · evt_010）',
+       desc:'白玺委托境外朋友在外国大模型上复测 G-9（跨平台链接生成/渲染不可用性），朋友转述结论与国内一致。但证据链为「我→朋友→境外AI→朋友→我」，含多个不可复核跳转，不能算境外平台直接生成物；另有微信截图显示朋友尝试让 Microsoft Copilot 读取 agentos-app.net 链接、首次结果不满意需重来，再次印证 G-9「链接作为载体不稳定」。本事件按 SXJ-MAIP/1.0 记为 evt_010，ρ = 0.2700（远低于 ρ_min = 0.85），明确不升级 evt_009——只记录「跨境验证模式」的出现，以及事现鉴「只记录可验证事实、不美化证据」的自我约束。',
+       evidence:['微信截图 SHA-256 ca13ab2e70d6d312df2fd792e0a6cb0d6ccfd4be4206c59360c82485aa083963','来源：白玺与 WorkBuddy 对话 2026-08-02（朋友转述属利害关系方举证）'],
+       recorder:'白玺',createdAt:now,status:'记录中',
+       updates:[
+         {ts:now,text:'境外委托复测完成，结论与国内一致；但因链过长记为低置信度辅助事现 evt_010，不升级 evt_009。',prevHash:'seed9',hash:''},
+         {ts:now,text:'按 MAIP 信封格式计算可验证密度 ρ = 0.2700（conf 0.75 × 来源独立度 0.80 × 证据等级 0.45 × 角色权重 1.00）。',prevHash:'seed9',hash:''}
+       ]});
+      save();
+    }
     return;
   }
   events=[
@@ -262,6 +274,15 @@ function seed(){
      updates:[
        {ts:now,text:'两张实证表公开记录，G-9 由「观察」升级为「已记录公共事现 evt_009」。',prevHash:'seed8',hash:''},
        {ts:now,text:'按 MAIP 信封格式计算可验证密度 ρ = 0.5355（conf 0.85 × 来源独立度 0.90 × 证据等级 0.70 × 角色权重 1.00）。',prevHash:'seed8',hash:''}
+       ]},
+    {id:'seed9',seq:9,prevHash:'',type:'共济值',date:'2026-08-02',
+     title:'境外委托复测 G-9（跨境验证模式首现 · 低置信度辅助事现 · evt_010）',
+     desc:'白玺委托境外朋友在外国大模型上复测 G-9（跨平台链接生成/渲染不可用性），朋友转述结论与国内一致。但证据链为「我→朋友→境外AI→朋友→我」，含多个不可复核跳转，不能算境外平台直接生成物；另有微信截图显示朋友尝试让 Microsoft Copilot 读取 agentos-app.net 链接、首次结果不满意需重来，再次印证 G-9「链接作为载体不稳定」。本事件按 SXJ-MAIP/1.0 记为 evt_010，ρ = 0.2700（远低于 ρ_min = 0.85），明确不升级 evt_009——只记录「跨境验证模式」的出现，以及事现鉴「只记录可验证事实、不美化证据」的自我约束。',
+     evidence:['微信截图 SHA-256 ca13ab2e70d6d312df2fd792e0a6cb0d6ccfd4be4206c59360c82485aa083963','来源：白玺与 WorkBuddy 对话 2026-08-02（朋友转述属利害关系方举证）'],
+     recorder:'白玺',createdAt:now,status:'记录中',
+     updates:[
+       {ts:now,text:'境外委托复测完成，结论与国内一致；但因链过长记为低置信度辅助事现 evt_010，不升级 evt_009。',prevHash:'seed9',hash:''},
+       {ts:now,text:'按 MAIP 信封格式计算可验证密度 ρ = 0.2700（conf 0.75 × 来源独立度 0.80 × 证据等级 0.45 × 角色权重 1.00）。',prevHash:'seed9',hash:''}
      ]}
   ];
   // fill prevHash chain + hashes
@@ -271,6 +292,8 @@ function seed(){
   events[4].prevHash=events[3].id;
   events[5].prevHash=events[4].id;
   events[6].prevHash=events[5].id;
+  events[7].prevHash=events[6].id;
+  events[8].prevHash=events[7].id;
   save();
 }
 
